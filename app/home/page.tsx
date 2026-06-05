@@ -9,7 +9,7 @@ export default function HomePage() {
   );
 }
 
-function HeroSection() {
+function HeroSectionBasic() {
     return (
         <div className="flex h-[100vh] w-full bg-blue-200 items-center justify-center">
           <div className="flex flex-col items-center min-w-[512px]">
@@ -22,5 +22,19 @@ function HeroSection() {
             </div>
           </div>
         </div>
-    )
+    );
+}
+
+function HeroSection() {
+  return (
+    <div className="relative flex h-[100vh] bg-black overflow-hidden items-center justify-center">
+
+      {/*Diagonal Red Polygon*/}
+      <div
+        className="absolute left-0 top-0 w-[55%] h-full bg-red-700"
+        style={{clipPath: "polygon(0 0, 100% 0, 78% 100%, 0% 100%)"}}
+      />
+
+    </div>
+  );
 }
