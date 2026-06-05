@@ -29,11 +29,27 @@ function HeroSection() {
   return (
     <div className="relative flex h-[100vh] bg-black overflow-hidden items-center justify-center">
 
-      {/*Diagonal Red Polygon*/}
+      {/*Diagonal Red Background Polygon*/}
       <div
         className="absolute left-0 top-0 w-[55%] h-full bg-red-700"
         style={{clipPath: "polygon(0 0, 100% 0, 78% 100%, 0% 100%)"}}
       />
+
+      {/*Content*/}
+      <div className="relative flex flex-col items-start w-full max-w-4xl px-12">
+
+        {/*Eyebrow title*/}
+        <div className="flex flex-row items-center gap-2">
+          <span className="w-6 h-0.5 bg-white/70" />
+          <p className="text-white/60 text-base font-bold italic uppercase tracking-wider">Portfolio</p>
+        </div>
+
+        {/*Title*/}
+        <h1 className="text-[5.5rem] font-black italic uppercase text-white leading-[1] tracking-tight [text-shadow:6px_6px_0_rgba(0,0,0,0.4)]">
+          Kara<br />Preston
+        </h1>
+
+      </div>
 
     </div>
   );
