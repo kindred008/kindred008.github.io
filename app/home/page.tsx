@@ -67,14 +67,14 @@ function HeroSection() {
         {/*Navigation Buttons*/}
         <div className="flex flex-row gap-2">
           <Link 
-            href="" 
+            href="#aboutme" 
             className="bg-white text-black font-black uppercase italic px-8 py-3 text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
             style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
           >
             About Me
           </Link>
           <Link 
-            href="" 
+            href="#projects" 
             className="bg-white text-black font-black uppercase italic px-8 py-3 text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
             style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
           >
