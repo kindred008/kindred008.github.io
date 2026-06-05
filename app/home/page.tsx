@@ -68,14 +68,14 @@ function HeroSection() {
         <div className="flex flex-row gap-2">
           <Link 
             href="" 
-            className="bg-white text-black font-black uppercase italic pl-8 py-3 pr-[2.5rem] text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
+            className="bg-white text-black font-black uppercase italic px-8 py-3 text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
             style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
           >
             About Me
           </Link>
           <Link 
             href="" 
-            className="bg-white text-black font-black uppercase italic pl-8 py-3 pr-[2.5rem] text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
+            className="bg-white text-black font-black uppercase italic px-8 py-3 text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
             style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
           >
             Projects
