@@ -56,9 +56,31 @@ function HeroSection() {
             <div className="w-1.5 h-0.5 bg-white/30" />
         </div>
 
+        {/*Professional Title*/}
         <h2 className="text-white/80 text-base font-bold italic uppercase tracking-tight">
           Software Engineer &amp; Game Programmer
         </h2>
+
+        {/*Stylish indent*/}
+        <div className="w-72 h-[1px] bg-white/70 my-5" />
+
+        {/*Navigation Buttons*/}
+        <div className="flex flex-row gap-2">
+          <Link 
+            href="" 
+            className="bg-white text-black font-black uppercase italic pl-8 py-3 pr-[2.5rem] text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
+            style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
+          >
+            About Me
+          </Link>
+          <Link 
+            href="" 
+            className="bg-white text-black font-black uppercase italic pl-8 py-3 pr-[2.5rem] text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
+            style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
+          >
+            Projects
+          </Link>
+        </div>
 
       </div>
 
