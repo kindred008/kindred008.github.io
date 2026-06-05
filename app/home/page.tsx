@@ -49,6 +49,17 @@ function HeroSection() {
           Kara<br />Preston
         </h1>
 
+        {/*Stylish indents*/}
+        <div className="flex items-center gap-2 my-5">
+            <div className="w-10 h-0.5 bg-white/70" />
+            <div className="w-3 h-0.5 bg-white/50" />
+            <div className="w-1.5 h-0.5 bg-white/30" />
+        </div>
+
+        <h2 className="text-white/80 text-base font-bold italic uppercase tracking-tight">
+          Software Engineer &amp; Game Programmer
+        </h2>
+
       </div>
 
     </div>
