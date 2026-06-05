@@ -14,10 +14,10 @@ export default function Footer() {
                 <div className = "flex flex-col items-center gap-1">
                     <p className="text-lg font-bold">Find me at</p>
                     <div className="flex flex-row gap-2">
-                        <a href="https://www.linkedin.com/in/kara-preston-3351b91ba/" target="_blank">
+                        <a href="https://www.linkedin.com/in/kara-preston-3351b91ba/" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} className = "w-8 h-8" />
                         </a>
-                        <a href = "https://github.com/kindred008" target="_blank">
+                        <a href = "https://github.com/kindred008" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={faGithub} className = "w-8 h-8" />
                         </a>
                     </div>
