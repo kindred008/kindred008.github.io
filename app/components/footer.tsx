@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
     return (
-        <div className="bg-footer text-background h-32 w-full flex justify-center">
-            <div className="flex flex-row h-full w-full justify-around items-center max-w-[512px] p-2">
+        <div className="bg-footer text-background min-h-32 w-full flex justify-center">
+            <div className="flex flex-row w-full justify-around items-center p-2 max-w-[512px] max-[380px]:flex-col max-[380px]:gap-2">
                 <div className="flex flex-col items-center gap-0 max-w-[250px]">
                     <p className="text-lg font-bold">Kara Preston</p>
                     <p className="text-sm text-background/70">
