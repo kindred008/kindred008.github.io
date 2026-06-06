@@ -30,3 +30,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.polygon-red {
+  clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+}
+
+@media (min-width: 640px) {
+  .polygon-red {
+    clip-path: polygon(0 0, 100% 0, 76% 100%, 0% 100%);
+  }
+}
