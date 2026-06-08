@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProjectCard from "../components/project-card";
 import { StylisedButton } from "../components/stylised-button";
+import { allProjectData } from "../data/project-data";
 
 export default function HomePage() {
   return (
@@ -68,9 +69,9 @@ function HeroSection() {
 function ProjectsSection() {
   return (
     <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] justify-center gap-5 px-4">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {allProjectData.map((project) => (
+        <ProjectCard key={project.title} projectData={project} />
+      ))}
     </div>
   );
 }

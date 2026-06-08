@@ -1,21 +1,27 @@
+import { IAllProjectData } from "../data/project-data";
 
+export interface IProjectCard {
+    projectData: IAllProjectData;
+}
 
-export default function ProjectCard() {
+export default function ProjectCard(props: IProjectCard) {
+    const {projectData} = props;
+
     return (
         <article className="grid grid-rows-[max-content_200px_1fr] border border-black rounded-md overflow-hidden">
             <header>
-                <h2 className="p-[0.5rem]">rTown</h2>
+                <h2 className="p-[0.5rem]">{projectData.title}</h2>
             </header>
 
             <img
                 className="object-contain w-full h-full"
-                src="https://cdn.dribbble.com/userupload/14216386/file/original-fa3ea6f7666b57c2ee23608a046f60d2.jpg?resize=1600x1200"
-                alt="rTown image"
+                src={projectData.imageUrl}
+                alt={`${projectData.title} image`}
             />
 
             <div className="p-[0.5rem]">
                 <p>
-                    r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.
+                    {projectData.description}
                 </p>
             </div>
         </article>
