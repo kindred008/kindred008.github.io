@@ -1,10 +1,16 @@
 import Link from "next/link";
+import ProjectCard from "../components/project-card";
+import { StylisedButton } from "../components/stylised-button";
 
 export default function HomePage() {
   return (
     <div>
         <HeroSection />
-        <div className = "bg-page h-80" />
+        <div className = "bg-page">
+
+          <ProjectsSection />
+
+        </div>
     </div>
   );
 }
@@ -59,21 +65,12 @@ function HeroSection() {
   );
 }
 
-interface StylisedButtonProps {
-  text: string;
-  link: string;
-}
-
-function StylisedButton(props: StylisedButtonProps) {
-  const {text, link} = props;
-
+function ProjectsSection() {
   return (
-    <Link 
-      href={link} 
-      className="bg-white text-black font-black uppercase italic px-8 py-3 text-sm tracking-widest hover:bg-red-600 hover:text-white transition-colors duration-150"
-      style={{clipPath:"polygon(5% 0%, 100% 0, 95% 100%, 0% 100%)"}}
-    >
-      {text}
-    </Link>
-  )
+    <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] justify-center gap-5 px-4">
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+    </div>
+  );
 }
