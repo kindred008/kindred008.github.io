@@ -68,10 +68,17 @@ function HeroSection() {
 
 function ProjectsSection() {
   return (
-    <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] justify-center gap-5 px-4">
-      {allProjectData.map((project) => (
-        <ProjectCard key={project.title} projectData={project} />
-      ))}
-    </div>
+    <section id="projects" className="py-4 flex flex-col gap-3">
+      <div className="flex w-full justify-center px-2">
+        <h2 className="mt-2 inline-block border-b-3 border-red-700 pb-2 text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+          Projects
+        </h2>
+      </div>
+      <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,320px))] justify-center gap-5 px-4">
+        {allProjectData.map((project) => (
+          <ProjectCard key={project.title} projectData={project} />
+        ))}
+      </div>
+    </section>
   );
 }
