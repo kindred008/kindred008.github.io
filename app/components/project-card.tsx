@@ -9,6 +9,10 @@ export interface IProjectCard {
 
 export default function ProjectCard(props: IProjectCard) {
     const {projectData} = props;
+    const [isResponsibilitiesExpanded, setIsResponsibilitiesExpanded] = useState(false);
+
+    const responsibilities = projectData.responsibilities;
+    const hasResponsibilities = responsibilities && responsibilities.length > 0;
 
     return (
         <article 
@@ -35,6 +39,33 @@ export default function ProjectCard(props: IProjectCard) {
                 <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 flex-1">
                     {projectData.description}
                 </p>
+
+                {hasResponsibilities && (
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-4 mt-auto">
+                        <button
+                            className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                            onClick={() => setIsResponsibilitiesExpanded(!isResponsibilitiesExpanded)}
+                        >
+                            <span className={`transition-transform duration-300 ${isResponsibilitiesExpanded ? 'rotate-90' : ''}`}>
+                                ▶
+                            </span>
+                            My responsibilities
+                        </button>
+
+                        {isResponsibilitiesExpanded && (
+                            <ul className="mt-2 space-y-2">
+                                {responsibilities.map((responsibility, index) => (
+                                    <li key={`responsibility_${index}`}
+                                        className="text-xs text-slate-600 dark:text-slate-400 flex items-start gap-2"
+                                    >
+                                        <span className="font-bold">•</span>
+                                         <span>{responsibility}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+                )}
 
             </div>
 
