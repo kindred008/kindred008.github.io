@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { IAllProjectData } from "../data/project-data";
 
 export interface IProjectCard {
@@ -46,9 +48,11 @@ export default function ProjectCard(props: IProjectCard) {
                             className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                             onClick={() => setIsResponsibilitiesExpanded(!isResponsibilitiesExpanded)}
                         >
-                            <span className={`transition-transform duration-300 ${isResponsibilitiesExpanded ? 'rotate-90' : ''}`}>
-                                ▶
-                            </span>
+                            <FontAwesomeIcon
+                                icon={isResponsibilitiesExpanded ? faChevronDown : faChevronRight}
+                                className="w-3"
+                                aria-hidden="true"
+                            />
                             My responsibilities
                         </button>
 
