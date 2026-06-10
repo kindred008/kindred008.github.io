@@ -85,13 +85,22 @@ function AboutMeSection() {
         <div>
           <h3 className="text-xl font-bold text-slate-900 mb-4">Experience</h3>
           <div className="flex flex-col gap-4">
+            
             {allRoleData.map((role, index) => (
-              <div key={`role_${index}`} className="border-l-3 border-red-700 pl-4 py-2">
-                <div className="flex items-start justify-between mb-1">
-                  <h4 className="font-semibold text-slate-900">{role.title}</h4>
-                  <span className="text-sm text-slate-600">{role.period}</span>
-                </div>
-                <p className="text-sm text-red-700 font-medium mb-2">{role.company}</p>
+              <details key={`role_${index}`} open={index === 0} className=" group border-l-3 border-red-700 pl-4 py-2 bg-white/40">
+                <summary className="cursor-pointer list-none rounded-md border border-slate-300 bg-white/70 px-3 py-3 hover:bg-white transition-colors">
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-col items-start justify-between gap-1">
+                      <h4 className="font-semibold text-slate-900">{role.title}</h4>
+                      <span className="text-sm text-slate-600">{role.company}</span>
+                    </div>
+                    <div className="flex flex-col items-end justify-between gap-1">
+                      <span className="text-sm text-red-700 font-medium mb-2">{role.period}</span>
+                      <span className="inline group-open:hidden text-xs font-semibold uppercase tracking-wide text-slate-500">Click to expand</span>
+                      <span className="hidden group-open:inline text-xs font-semibold uppercase tracking-wide text-slate-500">Click to collapse</span>
+                    </div>
+                  </div>
+                </summary>
                 <ul className="flex flex-col gap-1">
                   {role.description.map((point, pointIndex) => (
                     <li
@@ -103,8 +112,9 @@ function AboutMeSection() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </details>
             ))}
+
           </div>
         </div>
 
