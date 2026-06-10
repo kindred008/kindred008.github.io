@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { IAllProjectData } from "../data/project-data";
+import { IProjectData } from "../data/project-data";
 
 export interface IProjectCard {
-    projectData: IAllProjectData;
+    projectData: IProjectData;
 }
 
 export default function ProjectCard(props: IProjectCard) {

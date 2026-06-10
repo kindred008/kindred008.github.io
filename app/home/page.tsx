@@ -2,6 +2,8 @@ import Link from "next/link";
 import ProjectCard from "../components/project-card";
 import { StylisedButton } from "../components/stylised-button";
 import { allProjectData } from "../data/project-data";
+import { SectionTitle } from "../components/section-title";
+import { allRoleData } from "../data/roles-data";
 
 export default function HomePage() {
   return (
@@ -9,6 +11,7 @@ export default function HomePage() {
         <HeroSection />
         <div className = "bg-page">
 
+          <AboutMeSection />
           <ProjectsSection />
 
         </div>
@@ -66,14 +69,54 @@ function HeroSection() {
   );
 }
 
+function AboutMeSection() {
+  return (
+    <section id="aboutme" className="py-12 flex flex-col gap-8">
+      <SectionTitle title="About Me" />
+
+      <div className="w-full max-w-4xl mx-auto px-2">
+
+        <div className="mb-8">
+          <p className="text-slate-700 text-base leading-relaxed">
+            I am a versatile game programmer with 3 years of professional experience within the games industry across gameplay systems, multiplayer features, backend services, UI programming and quality engineering. I have extensive experience working within fast-paced cross-functional teams, taking ownership of features, and quickly adapting to new tools and frameworks. I am passionate about actively contributing to an engaging and collaborative company culture.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 mb-4">Experience</h3>
+          <div className="flex flex-col gap-4">
+            {allRoleData.map((role, index) => (
+              <div key={`role_${index}`} className="border-l-3 border-red-700 pl-4 py-2">
+                <div className="flex items-start justify-between mb-1">
+                  <h4 className="font-semibold text-slate-900">{role.title}</h4>
+                  <span className="text-sm text-slate-600">{role.period}</span>
+                </div>
+                <p className="text-sm text-red-700 font-medium mb-2">{role.company}</p>
+                <ul className="flex flex-col gap-1">
+                  {role.description.map((point, pointIndex) => (
+                    <li
+                      key={`role_${index}_point_${pointIndex}`}
+                      className="text-sm text-slate-600 flex items-start gap-2"
+                    >
+                      <span className="font-bold">-</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 function ProjectsSection() {
   return (
     <section id="projects" className="py-4 flex flex-col gap-3">
-      <div className="flex w-full justify-center px-2">
-        <h2 className="mt-2 inline-block border-b-3 border-red-700 pb-2 text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
-          Projects
-        </h2>
-      </div>
+      <SectionTitle title="Projects" />
       <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,320px))] justify-center gap-5 px-4">
         {allProjectData.map((project) => (
           <ProjectCard key={project.title} projectData={project} />

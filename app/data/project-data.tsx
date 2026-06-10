@@ -1,11 +1,11 @@
-export interface IAllProjectData {
+export interface IProjectData {
     title: string;
     description: string;
     imageUrl: string;
     responsibilities?: string[];
 }
 
-export const allProjectData: IAllProjectData[] = [
+export const allProjectData: IProjectData[] = [
     {
         title: "rTown",
         description: "r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.",
