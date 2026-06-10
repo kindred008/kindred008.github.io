@@ -17,7 +17,7 @@ export const allProjectData: IAllProjectData[] = [
     {
         title: "Guild of Thieves",
         description: "A multiplayer dungeon crawler game where you are a group of friends travel through dungeons to gain loot.",
-        imageUrl: "/projects/thieves/gameplay-concept-v2.jpg",
+        imageUrl: "/projects/thieves/thieves-coverart.png",
         responsibilities: [
             "Implementing gameplay mechanics",
             "Player progression behaviours",
