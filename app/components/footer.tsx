@@ -1,4 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
@@ -23,6 +24,9 @@ export default function Footer() {
                         </a>
                         <a href = "https://github.com/kindred008" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon size="2x" icon={faGithub} />
+                        </a>
+                        <a href="mailto:k.talia.preston123@gmail.com">
+                            <FontAwesomeIcon size="2x" icon={faEnvelope} />
                         </a>
                     </div>
                 </div>
