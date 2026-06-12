@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronRight, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { IProjectData } from "../data/project-data";
@@ -8,10 +10,11 @@ import { IProjectData } from "../data/project-data";
 interface ProjectModalProps {
     projectData: IProjectData;
     onClose: () => void;
+    onOpenLightbox: () => void;
 }
 
 function ProjectModal(props: ProjectModalProps) {
-    const {projectData, onClose} = props;
+    const {projectData, onClose, onOpenLightbox} = props;
 
     const responsibilities = projectData.responsibilities;
     const hasResponsibilities = responsibilities && responsibilities.length > 0;
@@ -42,10 +45,12 @@ function ProjectModal(props: ProjectModalProps) {
                     <FontAwesomeIcon icon={faXmark} className="w-4" />
                 </button>
 
-                <div className="overflow-hidden rounded-t-xl bg-slate-100 dark:bg-slate-800">
+                <div className="overflow-hidden rounded-t-xl bg-slate-100 dark:bg-slate-800 cursor-pointer"
+                    onClick={onOpenLightbox}
+                >
                     <img
                         className="w-full h-full object-cover max-h-[50vh]"
-                        src={projectData.imageUrl}
+                        src={projectData.bannerUrl}
                         alt={`${projectData.title} image`}
                     />
                 </div>
@@ -63,15 +68,28 @@ export default function ProjectCard(props: IProjectCard) {
     const {projectData} = props;
     const [isResponsibilitiesExpanded, setIsResponsibilitiesExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
     const responsibilities = projectData.responsibilities;
     const hasResponsibilities = responsibilities && responsibilities.length > 0;
 
+    const slides = projectData.imageUrls?.map((src) => ({ src })) ?? [{ src: projectData.bannerUrl }];
+
     return (
         <>
             {isModalOpen && 
-                <ProjectModal projectData={projectData} onClose={() => setIsModalOpen(false)} />
+                <ProjectModal
+                    projectData={projectData}
+                    onClose={() => setIsModalOpen(false)}
+                    onOpenLightbox={() => setIsLightboxOpen(true)}
+                />
             }
+
+            <Lightbox
+                open={isLightboxOpen}
+                close={() => setIsLightboxOpen(false)}
+                slides={slides}
+            />
 
             <article 
                 className="group h-full flex flex-col break-inside-avoid-column mb-5 bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl
@@ -83,7 +101,7 @@ export default function ProjectCard(props: IProjectCard) {
                 <div className="relative overflow-hidden h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
                     <img
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        src={projectData.imageUrl}
+                        src={projectData.bannerUrl}
                         alt={`${projectData.title} image`}
                     />
                     <span className="pointer-events-none absolute inset-0 flex items-end justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-t from-black/70 via-black/10 to-transparent text-white text-sm font-semibold pb-2">
