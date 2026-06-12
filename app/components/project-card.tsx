@@ -55,6 +55,36 @@ function ProjectModal(props: ProjectModalProps) {
                     />
                 </div>
 
+                <div className="flex flex-col flex-1 p-2 text-slate-900 dark:text-white">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 line-clamp-1">
+                        {projectData.title}
+                    </h3>
+
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 flex-1">
+                        {projectData.description}
+                    </p>
+
+                    {hasResponsibilities && (
+                        <div className="rounded-xl p-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700">
+                            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-700 dark:text-slate-300">
+                                My Contributions
+                            </h4>
+
+                            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                {responsibilities.map((responsibility, index) => (
+                                    <li key={`responsibility_${index}`}
+                                        className="flex items-start gap-2"
+                                    >
+                                        <span className="font-bold">•</span>
+                                        <span>{responsibility}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                </div>
+
             </div>
         </div>
     );
@@ -66,12 +96,8 @@ export interface IProjectCard {
 
 export default function ProjectCard(props: IProjectCard) {
     const {projectData} = props;
-    const [isResponsibilitiesExpanded, setIsResponsibilitiesExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
-    const responsibilities = projectData.responsibilities;
-    const hasResponsibilities = responsibilities && responsibilities.length > 0;
 
     const slides = projectData.imageUrls?.map((src) => ({ src })) ?? [{ src: projectData.bannerUrl }];
 
@@ -119,35 +145,6 @@ export default function ProjectCard(props: IProjectCard) {
                     <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 flex-1">
                         {projectData.description}
                     </p>
-
-                    {hasResponsibilities && (
-                        <div className="border-t border-slate-200 dark:border-slate-700 pt-4 mt-auto">
-                            <button
-                                className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-red-600 dark:hover:text-red-400 transition-colors"
-                                onClick={() => setIsResponsibilitiesExpanded(!isResponsibilitiesExpanded)}
-                            >
-                                <FontAwesomeIcon
-                                    icon={isResponsibilitiesExpanded ? faChevronDown : faChevronRight}
-                                    className="w-3"
-                                    aria-hidden="true"
-                                />
-                                My responsibilities
-                            </button>
-
-                            {isResponsibilitiesExpanded && (
-                                <ul className="mt-2 space-y-2">
-                                    {responsibilities.map((responsibility, index) => (
-                                        <li key={`responsibility_${index}`}
-                                            className="text-xs text-slate-600 dark:text-slate-400 flex items-start gap-2"
-                                        >
-                                            <span className="font-bold">•</span>
-                                            <span>{responsibility}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    )}
 
                 </div>
 
