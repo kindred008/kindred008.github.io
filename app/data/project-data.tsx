@@ -11,8 +11,19 @@ export const allProjectData: IProjectData[] = [
         title: "rTown",
         description: "r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.",
         bannerUrl: "/projects/rtown/rtown-graphic.png",
+        imageUrls: [
+            "/projects/rtown/project-slide-ui.png",
+            "/projects/rtown/summary-slide-ui.png",
+            "/projects/rtown/town-ui.png",
+        ],
         responsibilities: [
-            "Building robust front-ends",
+            "Creating responsive user interfaces",
+            "Developing gameplay systems",
+            "Implementing synchronous and asynchronous multiplayer features",
+            "Developing scalable backend systems, APIs and Redis-based data storage to support thousands of concurrent players",
+            "Contributing to an advanced multi-agent AI-driven simulation system",
+            "Building and iterating on live-ops systems (e.g. Push Notifications, Analytics, In-app purchases)",
+            "Supporting BETA rollout through community interaction and moderation",
         ],
     },
     {
