@@ -2,7 +2,7 @@ export interface IProjectData {
     title: string;
     description: string;
     bannerUrl: string;
-    imageUrls?: string[];
+    mediaUrls?: string[];
     responsibilities?: string[];
 }
 
@@ -11,7 +11,7 @@ export const allProjectData: IProjectData[] = [
         title: "rTown",
         description: "r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.",
         bannerUrl: "/projects/rtown/rtown-graphic.png",
-        imageUrls: [
+        mediaUrls: [
             "/projects/rtown/project-slide-ui.png",
             "/projects/rtown/summary-slide-ui.png",
             "/projects/rtown/town-ui.png",
@@ -30,6 +30,9 @@ export const allProjectData: IProjectData[] = [
         title: "Guild of Thieves",
         description: "A multiplayer dungeon crawler game where you are a group of friends travel through dungeons to gain loot.",
         bannerUrl: "/projects/thieves/thieves-coverart.png",
+        mediaUrls: [
+            "/projects/thieves/opening-movie.mp4",
+        ],
         responsibilities: [
             "Implementing gameplay mechanics",
             "Player progression behaviours",

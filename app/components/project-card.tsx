@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
+import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronRight, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -66,7 +67,7 @@ function ProjectModal(props: ProjectModalProps) {
                         {projectData.description}
                     </p>
 
-                    {projectData.imageUrls && projectData.imageUrls.length > 0 && (
+                    {projectData.mediaUrls && projectData.mediaUrls.length > 0 && (
                         <div className="flex justify-center">
                             <button
                                 onClick={onOpenLightbox}
@@ -112,7 +113,22 @@ export default function ProjectCard(props: IProjectCard) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-    const slides = projectData.imageUrls?.map((src) => ({ src })) ?? [{ src: projectData.bannerUrl }];
+    const slides = projectData.mediaUrls?.map((src) => {
+        if (src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov')) {
+            return {
+                type: "video",
+                width: 1280,
+                height: 720,
+                sources: [
+                    {
+                        src: src,
+                        type: src.endsWith('.webm') ? 'video/webm' : src.endsWith('.mov') ? 'video/quicktime' : 'video/mp4',
+                    },
+                ],
+            };
+        }
+        return { src };
+    }) ?? [{ src: projectData.bannerUrl }];
 
     return (
         <>
@@ -125,6 +141,7 @@ export default function ProjectCard(props: IProjectCard) {
             }
 
             <Lightbox
+                plugins={[Video]}
                 open={isLightboxOpen}
                 close={() => setIsLightboxOpen(false)}
                 slides={slides}
