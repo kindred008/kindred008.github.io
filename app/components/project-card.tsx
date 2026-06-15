@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,10 +49,12 @@ function ProjectModal(props: ProjectModalProps) {
                 <div className="overflow-hidden rounded-t-xl bg-slate-100 dark:bg-slate-800 cursor-pointer"
                     onClick={onOpenLightbox}
                 >
-                    <img
-                        className="w-full h-full object-cover max-h-[50vh]"
+                    <Image
+                        className="w-full  h-full object-cover max-h-[50vh]"
                         src={projectData.bannerUrl}
                         alt={`${projectData.title} image`}
+                        width={600}
+                        height={400}
                     />
                 </div>
 
@@ -125,10 +128,12 @@ export default function ProjectCard(props: IProjectCard) {
 
                 {/*Image*/}
                 <div className="relative overflow-hidden h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
-                    <img
+                    <Image
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         src={projectData.bannerUrl}
                         alt={`${projectData.title} image`}
+                        width={320}
+                        height={192}
                     />
                     <span className="pointer-events-none absolute inset-0 flex items-end justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-t from-black/70 via-black/10 to-transparent text-white text-sm font-semibold pb-2">
                         View Details
