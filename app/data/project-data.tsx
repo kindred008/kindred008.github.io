@@ -50,5 +50,14 @@ export const allProjectData: IProjectData[] = [
             "Implementing Tailwind CSS styling",
             "Designing and implementing UI layouts",
         ],
+    },
+    {
+        title: "Hatch Cats",
+        description: "Hatch Cats is a kitty-breeding game designed for Reddit.",
+        bannerUrl: "/projects/hatchcats/cats-coverimage.png",
+        responsibilities: [
+            "Updated analytics implementation",
+            "Added Slack alerts for production and dev errors",
+        ],
     }
 ];
