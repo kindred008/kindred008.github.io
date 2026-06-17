@@ -9,6 +9,7 @@ import "yet-another-react-lightbox/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { IProjectData } from "../data/project-data";
+import { Badge } from "./badge";
 
 interface ProjectModalProps {
     projectData: IProjectData;
@@ -165,10 +166,8 @@ export default function ProjectCard(props: IProjectCard) {
                         height={192}
                     />
 
-                    <span className={`absolute left-3 top-3 inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold capitalize
-                        ${projectData.category === "professional" ? "bg-red-700 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`}
-                    >
-                        {projectData.category}
+                    <span className="absolute left-3 top-3 inline-flex items-center">
+                        <Badge label={projectData.category} className={`text-xs ${projectData.category === "professional" ? "bg-red-700 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`} />
                     </span>
 
                     <span className="pointer-events-none absolute inset-0 flex items-end justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-t from-black/70 via-black/10 to-transparent text-white text-sm font-semibold pb-2">

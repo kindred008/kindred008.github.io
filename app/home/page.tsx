@@ -6,6 +6,7 @@ import { allProjectData, ProjectCategory } from "../data/project-data";
 import { SectionTitle } from "../components/section-title";
 import { allRoleData } from "../data/roles-data";
 import { useMemo, useState } from "react";
+import { Badge } from "../components/badge";
 
 export default function HomePage() {
   return (
@@ -152,12 +153,9 @@ function ProjectsSection() {
 
       <div className="flex gap-2 items-center justify-center">
         {categories.map((c) => (
-          <button key={c.key} onClick={() => setFilter(c.key)}
-            className={`px-2 py-1 rounded-full text-sm font-semibold border transition-colors
-              ${filter === c.key ? "bg-red-700 text-white border-red-700" : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700"}`}
-          >
-            {c.label}
-          </button>
+          <Badge key={c.key} label={c.label} onClick={() => setFilter(c.key)} 
+            className={`border ${filter === c.key ? "bg-red-700 text-white border-red-700" : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700"}`}
+          />
         ))}
       </div>
 
