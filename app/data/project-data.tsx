@@ -1,6 +1,7 @@
 export interface IProjectData {
     title: string;
     description: string;
+    category: "professional" | "personal" | "university" | "other";
     bannerUrl: string;
     mediaUrls?: string[];
     responsibilities?: string[];
@@ -10,6 +11,7 @@ export const allProjectData: IProjectData[] = [
     {
         title: "rTown",
         description: "r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.",
+        category: "professional",
         bannerUrl: "/projects/rtown/rtown-graphic.png",
         mediaUrls: [
             "/projects/rtown/project-slide-ui.png",
@@ -29,6 +31,7 @@ export const allProjectData: IProjectData[] = [
     {
         title: "Guild of Thieves",
         description: "A multiplayer dungeon crawler game where you are a group of friends travel through dungeons to gain loot.",
+        category: "professional",
         bannerUrl: "/projects/thieves/thieves-coverart.png",
         mediaUrls: [
             "/projects/thieves/opening-movie.mp4",
@@ -42,6 +45,7 @@ export const allProjectData: IProjectData[] = [
     },
     {
         title: "Portfolio Website",
+        category: "personal",
         description: "A personal portfolio website showcasing my projects.",
         bannerUrl: "/projects/portfolio/hero-section.png",
         responsibilities: [
@@ -53,6 +57,7 @@ export const allProjectData: IProjectData[] = [
     },
     {
         title: "Hatch Cats",
+        category: "professional",
         description: "Hatch Cats is a kitty-breeding game designed for Reddit.",
         bannerUrl: "/projects/hatchcats/cats-coverimage.png",
         responsibilities: [

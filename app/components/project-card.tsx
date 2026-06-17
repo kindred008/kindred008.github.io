@@ -164,6 +164,13 @@ export default function ProjectCard(props: IProjectCard) {
                         width={320}
                         height={192}
                     />
+
+                    <span className={`absolute left-3 top-3 inline-flex items-center px-2 p-1 rounded-full text-xs font-semibold capitalize
+                        ${projectData.category === "professional" ? "bg-red-700 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`}
+                    >
+                        {projectData.category}
+                    </span>
+
                     <span className="pointer-events-none absolute inset-0 flex items-end justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-t from-black/70 via-black/10 to-transparent text-white text-sm font-semibold pb-2">
                         View Details
                     </span>
