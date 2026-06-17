@@ -165,7 +165,7 @@ export default function ProjectCard(props: IProjectCard) {
                         height={192}
                     />
 
-                    <span className={`absolute left-3 top-3 inline-flex items-center px-2 p-1 rounded-full text-xs font-semibold capitalize
+                    <span className={`absolute left-3 top-3 inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold capitalize
                         ${projectData.category === "professional" ? "bg-red-700 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`}
                     >
                         {projectData.category}

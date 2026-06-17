@@ -1,9 +1,11 @@
-import Link from "next/link";
+"use client"
+
 import ProjectCard from "../components/project-card";
 import { StylisedButton } from "../components/stylised-button";
-import { allProjectData } from "../data/project-data";
+import { allProjectData, ProjectCategory } from "../data/project-data";
 import { SectionTitle } from "../components/section-title";
 import { allRoleData } from "../data/roles-data";
+import { useMemo, useState } from "react";
 
 export default function HomePage() {
   return (
@@ -123,15 +125,48 @@ function AboutMeSection() {
   );
 }
 
+type FilterCategory = ProjectCategory | "all";
+
 function ProjectsSection() {
+  const [filter, setFilter] = useState<FilterCategory>("all");
+
+  const categories: {key: FilterCategory, label: string }[] = [
+    { key: "all", label: "All" },
+    { key: "professional", label: "Professional" },
+    { key: "personal", label: "Personal" },
+    { key: "university", label: "University" }
+  ];
+
+  const filtered = useMemo(() => {
+    if (filter === "all") {
+      return allProjectData;
+    }
+
+    return allProjectData.filter((p) => p.category === filter);
+  }, [filter]);
+
   return (
     <section id="projects" className="py-4 flex flex-col gap-3">
+
       <SectionTitle title="Projects" />
+
+      <div className="flex gap-2 items-center justify-center">
+        {categories.map((c) => (
+          <button key={c.key} onClick={() => setFilter(c.key)}
+            className={`px-2 py-1 rounded-full text-sm font-semibold border transition-colors
+              ${filter === c.key ? "bg-red-700 text-white border-red-700" : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700"}`}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+
       <div className="w-full max-w-[1000px] my-4 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,320px))] justify-center gap-5 px-4">
-        {allProjectData.map((project) => (
+        {filtered.map((project) => (
           <ProjectCard key={project.title} projectData={project} />
         ))}
       </div>
+      
     </section>
   );
 }

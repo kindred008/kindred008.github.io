@@ -1,7 +1,9 @@
+export type ProjectCategory = "professional" | "personal" | "university" | "other";
+
 export interface IProjectData {
     title: string;
     description: string;
-    category: "professional" | "personal" | "university" | "other";
+    category: ProjectCategory;
     bannerUrl: string;
     mediaUrls?: string[];
     responsibilities?: string[];
