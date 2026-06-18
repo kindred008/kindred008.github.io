@@ -66,5 +66,23 @@ export const allProjectData: IProjectData[] = [
             "Updated analytics implementation",
             "Added Slack alerts for production and dev errors",
         ],
+    },
+    {
+        title: "Kindred Cafe",
+        category: "university",
+        description: "Mobile cafe app with custom erdering and admin order-management interfaces. Created for a second year University module on Mobile Application Development.",
+        bannerUrl: "/projects/kindred-cafe/order-screen.webp",
+        mediaUrls: [
+            "/projects/kindred-cafe/order-screen.webp",
+            "/projects/kindred-cafe/register-screen.webp",
+            "/projects/kindred-cafe/submitting-review.webp",
+            "/projects/kindred-cafe/google-pay.webp",
+        ],
+        responsibilities: [
+            "Built the app using Kotlin and Android Studio",
+            "Structure the app using Model-View-Presenter (MVP)",
+            "Integrated Firebase for backend storage and authentication",
+            "Integrated Google Pay for payments",
+        ],
     }
 ];
