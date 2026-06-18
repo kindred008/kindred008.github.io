@@ -11,6 +11,18 @@ export interface IProjectData {
 
 export const allProjectData: IProjectData[] = [
     {
+        title: "New Portfolio Website",
+        category: "personal",
+        description: "A personal portfolio website showcasing my projects.",
+        bannerUrl: "/projects/portfolio/hero-section.png",
+        responsibilities: [
+            "Setting up Next.js project with TypeScript",
+            "Building responsive React components",
+            "Implementing Tailwind CSS styling",
+            "Designing and implementing UI layouts",
+        ],
+    },
+    {
         title: "rTown",
         description: "r/town (beta) is a collaborative city-building experiment for subreddits, made possible by LLM technology. It's a city sim, a social playroom, and an innovation of AI in games.",
         category: "professional",
@@ -46,18 +58,6 @@ export const allProjectData: IProjectData[] = [
         ],
     },
     {
-        title: "Portfolio Website",
-        category: "personal",
-        description: "A personal portfolio website showcasing my projects.",
-        bannerUrl: "/projects/portfolio/hero-section.png",
-        responsibilities: [
-            "Setting up Next.js project with TypeScript",
-            "Building responsive React components",
-            "Implementing Tailwind CSS styling",
-            "Designing and implementing UI layouts",
-        ],
-    },
-    {
         title: "Hatch Cats",
         category: "professional",
         description: "Hatch Cats is a kitty-breeding game designed for Reddit.",
@@ -70,7 +70,7 @@ export const allProjectData: IProjectData[] = [
     {
         title: "Kindred Leaderboards",
         category: "university",
-        description: "Web application for providing leaderboards for game developers to integrate into their game.",
+        description: "Web application for providing leaderboards for game developers to integrate into their game. Created as my final year University project.",
         bannerUrl: "/projects/kindred-leaderboards/kindred-leaderboards.png",
         responsibilities: [
             "Built the web admin UI using Blazor and C#",
@@ -78,6 +78,21 @@ export const allProjectData: IProjectData[] = [
             "Designed UI and UX in Figma, and used Jira for task management",
             "Created Unity Package for easy integration into Unity Games",
             "Built a sample Unity game demonstrating the leaderboards in action",
+        ],
+    },
+    {
+        title: "Old Portfolio Website",
+        category: "university",
+        description: "Old portfolio website created for a third year University module on Front-End Web Development.",
+        bannerUrl: "/projects/old-portfolio-website/index.webp",
+        mediaUrls: [
+            "/projects/old-portfolio-website/index.webp",
+            "/projects/old-portfolio-website/about-me.webp",
+            "/projects/old-portfolio-website/projects.webp",
+            "/projects/old-portfolio-website/contact.webp",
+        ],
+        responsibilities: [
+            "Built the site using HTML, CSS and vanilla JavaScript",
         ],
     },
     {
