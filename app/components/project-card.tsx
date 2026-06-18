@@ -49,15 +49,21 @@ function ProjectModal(props: ProjectModalProps) {
                     <FontAwesomeIcon icon={faXmark} className="w-4" />
                 </button>
 
-                <div className="overflow-hidden rounded-t-xl bg-slate-100 dark:bg-slate-800"
-                >
-                    <Image
-                        className="w-full h-full object-cover max-h-[50vh]"
-                        src={projectData.bannerUrl}
-                        alt={`${projectData.title} image`}
-                        width={600}
-                        height={400}
-                    />
+                <div className="overflow-hidden rounded-t-xl bg-slate-100 dark:bg-slate-800">
+                    {projectData.bannerUrl ? (
+                        <Image
+                            className="w-full h-full object-cover max-h-[50vh]"
+                            src={projectData.bannerUrl}
+                            alt={`${projectData.title} image`}
+                            width={600}
+                            height={400}
+                        />
+                    ) : (
+                        <div className="flex h-64 flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700 px-4 text-center">
+                            <p className="text-lg font-bold text-slate-900 dark:text-white">No banner image</p>
+                            <p className="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">{projectData.title}</p>
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex flex-col gap-1 flex-1 p-2 text-slate-900 dark:text-white">
@@ -131,7 +137,7 @@ export default function ProjectCard(props: IProjectCard) {
             } as Slide;
         }
         return { src } as Slide;
-    }) ?? [{ src: projectData.bannerUrl } as Slide]);
+    }) ?? (projectData.bannerUrl ? [{ src: projectData.bannerUrl } as Slide] : []));
 
     return (
         <>
@@ -158,13 +164,20 @@ export default function ProjectCard(props: IProjectCard) {
 
                 {/*Image*/}
                 <div className="relative overflow-hidden h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
-                    <Image
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        src={projectData.bannerUrl}
-                        alt={`${projectData.title} image`}
-                        width={320}
-                        height={192}
-                    />
+                    {projectData.bannerUrl ? (
+                        <Image
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            src={projectData.bannerUrl}
+                            alt={`${projectData.title} image`}
+                            width={320}
+                            height={192}
+                        />
+                    ) : (
+                        <div className="flex h-full flex-col items-center justify-center px-4 text-center">
+                            <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">No banner image</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">{projectData.title}</p>
+                        </div>
+                    )}
 
                     <span className="absolute left-3 top-3 inline-flex items-center">
                         <Badge label={projectData.category} className={`text-xs ${projectData.category === "professional" ? "bg-red-700 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`} />

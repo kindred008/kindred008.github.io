@@ -4,7 +4,7 @@ export interface IProjectData {
     title: string;
     description: string;
     category: ProjectCategory;
-    bannerUrl: string;
+    bannerUrl?: string;
     mediaUrls?: string[];
     responsibilities?: string[];
 }
