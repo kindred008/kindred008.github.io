@@ -81,7 +81,7 @@ function AboutMeSection() {
 
         <div className="mb-8">
           <p className="text-slate-700 text-base leading-relaxed">
-            I am a versatile game programmer with 3 years of professional experience within the games industry across gameplay systems, multiplayer features, backend services, UI programming and quality engineering. I have extensive experience working within fast-paced cross-functional teams, taking ownership of features, and quickly adapting to new tools and frameworks. I am passionate about actively contributing to an engaging and collaborative company culture.
+            I am a versatile software engineer with 3 years of professional experience across game development, full-stack web development, backend services and quality engineering. I have extensive experience working within fast-paced cross-functional teams, across both startup and corporate environments, taking ownership of features and quickly adapting to new and cutting-edge tools and frameworks. I am passionate about actively contributing to an engaging and collaborative company culture.
           </p>
         </div>
 
