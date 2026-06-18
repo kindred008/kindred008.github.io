@@ -68,6 +68,20 @@ export const allProjectData: IProjectData[] = [
         ],
     },
     {
+        title: "The Witch's Familiar",
+        category: "personal",
+        description: "You are the familiar of a witch who is rushing to complete her potion. Be fast, for the witch is not very patient!",
+        bannerUrl: "https://img.itch.zone/aW1nLzE0NzQ1NTUzLnBuZw==/315x250%23c/CqyhM0.png",
+        mediaUrls: [
+            "/projects/witches-familiar/gameplay-image-1.webp",
+            "/projects/witches-familiar/gameplay-image-2.webp",
+            "/projects/witches-familiar/gameplay-image-3.webp",
+        ],
+        responsibilities: [
+            "Implement all gameplay and UI logic in Unity and C#.",
+        ],
+    },
+    {
         title: "Kindred Leaderboards",
         category: "university",
         description: "Web application for providing leaderboards for game developers to integrate into their game. Created as my final year University project.",
