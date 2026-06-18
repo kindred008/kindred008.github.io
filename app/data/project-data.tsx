@@ -68,10 +68,23 @@ export const allProjectData: IProjectData[] = [
         ],
     },
     {
+        title: "Kindred Leaderboards",
+        category: "university",
+        description: "Web application for providing leaderboards for game developers to integrate into their game.",
+        bannerUrl: "/projects/kindred-leaderboards/kindred-leaderboards.png",
+        responsibilities: [
+            "Built the web admin UI using Blazor and C#",
+            "Implemented the backend REST API with ASP.NET Core (C#) to host leaderboards and enable game integration",
+            "Designed UI and UX in Figma, and used Jira for task management",
+            "Created Unity Package for easy integration into Unity Games",
+            "Built a sample Unity game demonstrating the leaderboards in action",
+        ],
+    },
+    {
         title: "Kindred Cafe",
         category: "university",
         description: "Mobile cafe app with custom erdering and admin order-management interfaces. Created for a second year University module on Mobile Application Development.",
-        bannerUrl: "/projects/kindred-cafe/order-screen.webp",
+        bannerUrl: "/projects/kindred-cafe/banner-image.png",
         mediaUrls: [
             "/projects/kindred-cafe/order-screen.webp",
             "/projects/kindred-cafe/register-screen.webp",
@@ -84,5 +97,5 @@ export const allProjectData: IProjectData[] = [
             "Integrated Firebase for backend storage and authentication",
             "Integrated Google Pay for payments",
         ],
-    }
+    },
 ];
