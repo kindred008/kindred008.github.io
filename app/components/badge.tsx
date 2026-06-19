@@ -1,6 +1,6 @@
 export interface IBadge {
-    key?: string;
     label: string;
+    key?: string;
     onClick?: () => void;
     className?: string;
 }

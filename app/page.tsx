@@ -1,8 +1,10 @@
-//import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function LandingPage() {
-  // redirect("/home");
+  redirect("/portfolio");
+}
 
+/*function UnderConstruction() {
   return (
     <div className="flex flex-1 flex-col justify-center gap-6 text-center">
       <span className="text-8xl">🚧</span>
@@ -10,4 +12,4 @@ export default function LandingPage() {
       <p className="text-xl text-foreground/60">Please check back soon!</p>
     </div>
   );
-}
+}*/
