@@ -56,7 +56,7 @@ export const allProjectData: IProjectData[] = [
             "Contributed to an advanced multi-agent AI-driven simulation system using Python and Google's Agent Development Kit",
             "Built and iterated on live-ops systems (e.g. Push Notifications, Analytics, In-app purchases)",
             "Supported BETA rollout through community interaction and moderation",
-            "Worked directly with Reddit's engineering teams on implementing pre-release platform features into our project"
+            "Contributed to product design",
         ],
     },
     {
@@ -65,14 +65,24 @@ export const allProjectData: IProjectData[] = [
         category: "professional",
         bannerUrl: "/projects/thieves/thieves-coverart.png",
         mediaUrls: [
-            "/projects/thieves/opening-movie.mp4",
+            "/projects/thieves/opening-movie.webm",
+            "/projects/thieves/clapping.webp",
+            "/projects/thieves/thief-level.webp",
+            "/projects/thieves/combat.webm",
+            "/projects/thieves/celebration.webp",
+            "/projects/thieves/lobby.webp",
+            "/projects/thieves/holding-player.webp",
+            "/projects/thieves/loadout.webp",
+            "/projects/thieves/corridor-level.webp",
+            "/projects/thieves/large-level1.webp",
+            "/projects/thieves/large-level2.webp",
+            "/projects/thieves/picking-up.webm",
         ],
         responsibilities: [
             "Implemented gameplay mechanics in PlayCanvas and TypeScript",
             "Created and designed player progression behaviours",
             "Implemented synchronous multiplayer features",
             "Prepared builds for player playtests",
-            "Worked directly with Discord's engineering teams on implementing pre-release platform features into the game",
         ],
     },
     {
@@ -143,7 +153,7 @@ export const allProjectData: IProjectData[] = [
         description: "An internal site used to calculate and display the quality of the Unity Engine between different versions.",
         responsibilities: [
             "Primary frontend developer, building UI and client logic with ASP.NET, Blazor, and C#",
-            "Assisted with backend work, including aggregating years of data from Jira",
+            "Assisted with backend work, including aggregating multi-year Jira data for reporting",
             "Created unit tests and Playwright end-to-end tests",
         ],
     },

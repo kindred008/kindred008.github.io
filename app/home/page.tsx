@@ -129,7 +129,7 @@ function AboutMeSection() {
 type FilterCategory = ProjectCategory | "all";
 
 function ProjectsSection() {
-  const [filter, setFilter] = useState<FilterCategory>("all");
+  const [filter, setFilter] = useState<FilterCategory>("professional");
 
   const categories: {key: FilterCategory, label: string }[] = [
     { key: "all", label: "All" },
