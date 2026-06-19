@@ -68,6 +68,24 @@ export const allProjectData: IProjectData[] = [
         ],
     },
     {
+        title: "Project Tactics",
+        category: "personal",
+        description: "Project Tactics is an in-progress tactical SRPG game.",
+        bannerUrl: "/projects/project-tactics/unit-selection.png",
+        mediaUrls: [
+            "/projects/project-tactics/zoomed-out.png",
+            "/projects/project-tactics/unit-attack.mp4",
+            "/projects/project-tactics/unit-selection.png",
+            "/projects/project-tactics/unit-attack.png",
+            "/projects/project-tactics/unit-commands.mp4",
+        ],
+        responsibilities: [
+            "Implement gameplay and UI logic in Unity and C#",
+            "Implement Dijkstra’s algorithm for pathfinding",
+            "Create a utility-based AI system",
+        ],
+    },
+    {
         title: "The Witch's Familiar",
         category: "personal",
         description: "You are the familiar of a witch who is rushing to complete her potion. Be fast, for the witch is not very patient!",
@@ -78,7 +96,27 @@ export const allProjectData: IProjectData[] = [
             "/projects/witches-familiar/gameplay-image-3.webp",
         ],
         responsibilities: [
-            "Implement all gameplay and UI logic in Unity and C#.",
+            "Implement all gameplay and UI logic in Unity and C#",
+            "Assisting with game design"
+        ],
+    },
+    {
+        title: "The Forbidden Library",
+        category: "personal",
+        description: "A librarian discovers a dark secret about her workplace, to solve it she must dig deeper!",
+        bannerUrl: "/projects/the-forbidden-library/thumbnail.webp",
+        mediaUrls: [
+            "/projects/the-forbidden-library/gameplay-level1.webp",
+            "/projects/the-forbidden-library/piano-minigame.webp",
+            "/projects/the-forbidden-library/dialogue.webp",
+            "/projects/the-forbidden-library/ghost.webp",
+            "/projects/the-forbidden-library/gameplay-level3.webp",
+        ],
+        responsibilities: [
+            "Implement movement and gameplay logic",
+            "Create quest and hint system",
+            "Create piano minigame",
+            "Assisting with game design"
         ],
     },
     {
