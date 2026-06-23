@@ -80,27 +80,27 @@ function AboutMeSection() {
       <div className="w-full max-w-4xl mx-auto px-2">
 
         <div className="mb-8">
-          <p className="text-slate-700 text-base leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
             I am a versatile software engineer with 3 years of professional experience across game development, full-stack web development, backend services and quality engineering. I have extensive experience working within fast-paced cross-functional teams, across both startup and corporate environments, taking ownership of features and quickly adapting to new and cutting-edge tools and frameworks. I am passionate about actively contributing to an engaging and collaborative company culture.
           </p>
         </div>
 
         <div>
-          <h3 className="text-xl font-bold text-slate-900 mb-4">Experience</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-200 mb-4">Experience</h3>
           <div className="flex flex-col gap-4">
             
             {allRoleData.map((role, index) => (
-              <details key={`role_${index}`} open={index === 0} className=" group border-l-3 border-red-700 pl-4 py-2 bg-white/40">
-                <summary className="cursor-pointer list-none rounded-md border border-slate-300 bg-white/70 px-3 py-3 hover:bg-white transition-colors">
+              <details key={`role_${index}`} open={index === 0} className="group border-l-3 border-red-700 pl-4 py-2">
+                <summary className="cursor-pointer list-none rounded-md border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 px-3 py-3 hover:bg-white dark:hover:bg-slate-800 transition-colors">
                   <div className="flex flex-row justify-between">
                     <div className="flex flex-col items-start justify-between gap-1">
-                      <h4 className="font-semibold text-slate-900">{role.title}</h4>
-                      <span className="text-sm text-slate-600">{role.company}</span>
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-200">{role.title}</h4>
+                      <span className="text-sm text-slate-600 dark:text-slate-300">{role.company}</span>
                     </div>
                     <div className="flex flex-col items-end justify-between gap-1">
                       <span className="text-sm text-red-700 font-medium mb-2">{role.period}</span>
-                      <span className="inline group-open:hidden text-xs font-semibold uppercase tracking-wide text-slate-500">Click to expand</span>
-                      <span className="hidden group-open:inline text-xs font-semibold uppercase tracking-wide text-slate-500">Click to collapse</span>
+                      <span className="inline group-open:hidden text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Click to expand</span>
+                      <span className="hidden group-open:inline text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Click to collapse</span>
                     </div>
                   </div>
                 </summary>
@@ -108,7 +108,7 @@ function AboutMeSection() {
                   {role.description.map((point, pointIndex) => (
                     <li
                       key={`role_${index}_point_${pointIndex}`}
-                      className="text-sm text-slate-600 flex items-start gap-2"
+                      className="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"
                     >
                       <span className="font-bold">-</span>
                       <span>{point}</span>
