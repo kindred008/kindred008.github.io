@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "../components/footer";
 import ProjectCard from "../components/project-card";
 import { StylisedButton } from "../components/stylised-button";
 import { allProjectData, ProjectCategory } from "../data/project-data";
@@ -18,6 +19,7 @@ export default function HomePage() {
           <ProjectsSection />
 
         </div>
+        <Footer />
     </div>
   );
 }
