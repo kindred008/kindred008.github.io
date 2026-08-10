@@ -9,7 +9,7 @@ export default function BitzeeAquarium() {
   return (
     <iframe
       src="/bitzee-aquarium/index.html"
-      style={{ width: "100%", height: "100vh", border: "none" }}
+      style={{ width: "100%", height: "100dvh", border: "none" }}
     />
   );
 }
