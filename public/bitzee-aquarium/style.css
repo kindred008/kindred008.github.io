@@ -19,6 +19,9 @@ body {
     aspect-ratio: 390 / 844;
     max-height: 100dvh;
     margin: 0 auto;
+    background-image: url('/assets/purple-background.png');
+    background-size: cover;
+    background-position: center;
 }
 
 @media (max-width: 600px) {
