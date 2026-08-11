@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bitzee Aquarium",
   description: "Interview project for Hoopla Digital",
+  openGraph: {
+    title: "Bitzee Aquarium",
+    description: "Interview project for Hoopla Digital",
+  },
 };
 
 export default function BitzeeAquarium() {

@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kara Portfolio",
   description: "Software Engineer and Game Programmer",
+  openGraph: {
+    title: "Kara Portfolio",
+    description: "Software Engineer and Game Programmer",
+  },
 };
 
 export default function RootLayout({
